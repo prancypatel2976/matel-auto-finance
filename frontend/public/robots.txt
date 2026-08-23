@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://matel-auto-finance.vercel.app/sitemap.xml
