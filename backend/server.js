@@ -55,16 +55,27 @@ const ensureAdminExists = async () => {
   }
 };
 
-// Connect to Database first then start server
-connectDB().then(async () => {
-  await ensureAdminExists();
+// Connect to database
+connectDB()
+  .then(async () => {
+    await ensureAdminExists();
+    console.log('Database connected successfully');
+  })
+  .catch((err) => {
+    console.error('Failed to connect to database:', err.message);
+  });
+
+// Export Express app for Vercel
+module.exports = app;
+
+// Start server locally
+if (require.main === module) {
+  const PORT = process.env.PORT || 5000;
+
   app.listen(PORT, () => {
     console.log('=========================================');
     console.log(`🚀 Server is listening on Port ${PORT}`);
     console.log(`Mode: ${process.env.NODE_ENV || 'development'}`);
     console.log('=========================================');
   });
-}).catch((err) => {
-  console.error('Failed to start server due to DB connection failure:', err.message);
-});
-
+}
