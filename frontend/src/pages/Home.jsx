@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-import { 
-  FiLock, 
-  FiShield, 
+import {
+  FiLock,
+  FiShield,
   FiArrowRight
 } from 'react-icons/fi';
 
@@ -17,13 +17,13 @@ const Home = () => {
         <h1 className="hero-title">
           Matel Auto Finance
         </h1>
-        
+
         <p className="hero-subtitle">
           Complete Auto Loan & Installment Management Portal
         </p>
 
         <p className="hero-description">
-          Manage active vehicle loans, track upcoming monthly EMI due dates, and oversee car financing with precision and security.
+          Matel Auto Finance is an auto finance management platform for managing vehicle loans, monthly EMI payments, customer finance records, and repayment schedules securely.
         </p>
 
         <div className="hero-actions">
